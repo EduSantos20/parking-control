@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html long="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Spot Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Parking Spot Registration</h2>
+    <form method="post">
+      <div class="form-group">
+        <label for="parkingSpotNumber">Parking Spot Number</label>
+        <input type="text" id="parkingSpotNumber" name="parkingSpotNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label for="licensePlateCar">License Plate</label>
+        <input type="text" id="licensePlateCar" name="licensePlateCar" required>
+      </div>
+
+      <div class="form-group">
+        <label for="brandCar">Car Brand</label>
+        <input type="text" id="brandCar"  name="brandCar"required>
+      </div>
+
+      <div class="form-group">
+        <label for="modelCar">Car Model</label>
+        <input type="text" id="modelCar" name="modelCar" required>
+      </div>
+
+      <div class="form-group">
+        <label for="colorCar">Car Color</label>
+        <input type="text" id="colorCar"  name="colorCar"required>
+      </div>
+
+      <div class="form-group">
+        <label for="responsibleName">Responsible Name</label>
+        <input type="text" id="responsibleName" name="responsibleName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="apartment">Apartment</label>
+        <input type="text" id="apartment" name="apartment" required>
+      </div>
+
+      <div class="form-group">
+        <label for="block">Block</label>
+        <input type="text" id="block" name="block" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Register Parking Spot</button>
+    </form>
+  </div>
+</body>
+
+</html>

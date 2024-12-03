@@ -1,16 +1,16 @@
 package com.api.parking_control.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+//import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class ParkingSpotDto {
-
+  //OBS: esses serão os campos que vai ser add na rota 
   @NotBlank(message = "Número da vaga é Obrigatório") // verificar se o campo esta nullo ou se não tem strinh vazia
   private String parkingSpotNumber; // numero da vaga
   @NotBlank(message = "Placa do carro é Obrigatória")
   @Size(max = 7) // numero de caracteres
-  @Pattern(regexp = "^[A-Z]{3}-\\d{4}$", message = "Placa inválida")
+  //@Pattern(regexp = "^[A-Z]{3}-\\d{4}$", message = "Placa inválida")
   private String licensePlateCar; // placa do carro
   @NotBlank
   private String brandCar; // marca do carro

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html long="pt-BR">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parking Spot Registration</title>
   <style>
     body {
@@ -58,45 +59,45 @@
 <body>
   <div class="form-container">
     <h2>Parking Spot Registration</h2>
-    <form th:action="@{/parking-spot/save}" th:object="${parkingSpotDTO}" method="post">
+    <form method="post">
       <div class="form-group">
-        <label for="parkingSpotNumber">Parking Spot Number</label>
-        <input type="text" id="parkingSpotNumber" th:field="*{parkingSpotNumber}" required>
+        <label for="parkingSpotNumber">Numero da Vaga</label>
+        <input type="text" id="parkingSpotNumber" name="parkingSpotNumber" required>
       </div>
 
       <div class="form-group">
-        <label for="licensePlateCar">License Plate</label>
-        <input type="text" id="licensePlateCar" th:field="*{licensePlateCar}" required>
+        <label for="licensePlateCar">Placa</label>
+        <input type="text" id="licensePlateCar" name="licensePlateCar" required>
       </div>
 
       <div class="form-group">
-        <label for="brandCar">Car Brand</label>
-        <input type="text" id="brandCar" th:field="*{brandCar}" required>
+        <label for="brandCar">Marco do carro</label>
+        <input type="text" id="brandCar" name="brandCar" required>
       </div>
 
       <div class="form-group">
-        <label for="modelCar">Car Model</label>
-        <input type="text" id="modelCar" th:field="*{modelCar}" required>
+        <label for="modelCar">Modelo do Carro</label>
+        <input type="text" id="modelCar" name="modelCar" required>
       </div>
 
       <div class="form-group">
-        <label for="colorCar">Car Color</label>
-        <input type="text" id="colorCar" th:field="*{colorCar}" required>
+        <label for="colorCar">Cor do Carro</label>
+        <input type="text" id="colorCar" name="colorCar" required>
       </div>
 
       <div class="form-group">
-        <label for="responsibleName">Responsible Name</label>
-        <input type="text" id="responsibleName" th:field="*{responsibleName}" required>
+        <label for="responsibleName">Responsavel do Carro</label>
+        <input type="text" id="responsibleName" name="responsibleName" required>
       </div>
 
       <div class="form-group">
-        <label for="apartment">Apartment</label>
-        <input type="text" id="apartment" th:field="*{apartment}" required>
+        <label for="apartment">Apartamento</label>
+        <input type="text" id="apartment" name="apartment" required>
       </div>
 
       <div class="form-group">
-        <label for="block">Block</label>
-        <input type="text" id="block" th:field="*{block}" required>
+        <label for="block">Bloco</label>
+        <input type="text" id="block" name="block" required>
       </div>
 
       <button type="submit" class="submit-btn">Register Parking Spot</button>
