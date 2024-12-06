@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.api.parking_control.dto.ParkingSpotDto;
 import com.api.parking_control.models.ParkingSpotModel;
@@ -39,12 +38,6 @@ public class ParkingSpotController {
   public ParkingSpotController(ParkingSpotService parkingSpotService) {
     this.parkingSpotService = parkingSpotService;
   }
-
-  @GetMapping("/cadastra")
-  public String formulario() {
-    return "cadastro/formCar";
-  }
-
   @PostMapping("/parking-spot")
   public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid ParkingSpotDto parkingSpotDto) {
 
@@ -106,10 +99,19 @@ public class ParkingSpotController {
     return ResponseEntity.status(HttpStatus.OK).body(parkingSpotService.save(parkingSpotModel));
   }
 
-  @PostMapping("/parkingForm")
-  public String form(ParkingSpotDto parkingSpotDto) {
-    parkingSpotRepository.save(parkingSpotDto); // salvando meus dados no banco de dados
-    return "redirect:/parkingForm"; // chamando meu cadastro evento html
+  /* @PostMapping("/cadastra") 
+  public String form(ParkingSpotModel parkingSpotModel) {
+    if (parkingSpotRepository.existsByParkingSpotNumber(parkingSpotModel.getParkingSpotNumber())) {
+      return "Vaga já está em uso!!";
+    }
+    if (parkingSpotRepository.existsByLicensePlateCar(parkingSpotModel.getLicensePlateCar())) {
+      return "Placa em uso!! Verifique a placa do seu carro.";
+    }
+    if (parkingSpotRepository.existsByApartmentAndBlock(parkingSpotModel.getApartment(), parkingSpotModel.getBlock())) {
+      return "Apartamento e bloco em uso!!";
+    }
+    parkingSpotRepository.save(parkingSpotModel); // salvando meus dados no banco de dados
+    return "redirect:/cadastra";// chamando meu cadastro evento html
   }
 
   @GetMapping
@@ -118,5 +120,5 @@ public class ParkingSpotController {
     Iterable<ParkingSpotModel> parkingSpotModel = parkingSpotService.findAll();
     view.addObject("parkingSpotModel", parkingSpotModel);
     return view;
-  }
+  } */
 }
