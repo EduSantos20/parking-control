@@ -17,7 +17,7 @@ public class ParkingSpotModel implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO) // id vai ser gerado de forma automática na base dados
+  @GeneratedValue(strategy = GenerationType.UUID) // id vai ser gerado de forma automática na base dados
   private UUID id;
 
   @Column(nullable = false, unique = true, length = 10) // não pode ser nulo/não pode ter numero repitidos/tamanho de 10

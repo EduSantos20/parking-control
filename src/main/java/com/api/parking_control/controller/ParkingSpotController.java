@@ -98,27 +98,4 @@ public class ParkingSpotController {
     parkingSpotModel.setRegistrationDate(parkingSpotModelOptional.get().getRegistrationDate());
     return ResponseEntity.status(HttpStatus.OK).body(parkingSpotService.save(parkingSpotModel));
   }
-
-  /* @PostMapping("/cadastra") 
-  public String form(ParkingSpotModel parkingSpotModel) {
-    if (parkingSpotRepository.existsByParkingSpotNumber(parkingSpotModel.getParkingSpotNumber())) {
-      return "Vaga já está em uso!!";
-    }
-    if (parkingSpotRepository.existsByLicensePlateCar(parkingSpotModel.getLicensePlateCar())) {
-      return "Placa em uso!! Verifique a placa do seu carro.";
-    }
-    if (parkingSpotRepository.existsByApartmentAndBlock(parkingSpotModel.getApartment(), parkingSpotModel.getBlock())) {
-      return "Apartamento e bloco em uso!!";
-    }
-    parkingSpotRepository.save(parkingSpotModel); // salvando meus dados no banco de dados
-    return "redirect:/cadastra";// chamando meu cadastro evento html
-  }
-
-  @GetMapping
-  public ModelAndView listaCadastro() {
-    ModelAndView view = new ModelAndView("index");
-    Iterable<ParkingSpotModel> parkingSpotModel = parkingSpotService.findAll();
-    view.addObject("parkingSpotModel", parkingSpotModel);
-    return view;
-  } */
 }
