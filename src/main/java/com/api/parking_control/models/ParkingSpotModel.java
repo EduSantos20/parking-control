@@ -20,10 +20,10 @@ public class ParkingSpotModel implements Serializable {
   @GeneratedValue(strategy = GenerationType.UUID) // id vai ser gerado de forma automática na base dados
   private UUID id;
 
-  @Column(nullable = false, unique = true, length = 10) // não pode ser nulo/não pode ter numero repitidos/tamanho de 10
+  @Column(nullable = false, unique = true, length = 10) // não pode ser nulo/não pode ter numero repetidos/tamanho de 10
   private String parkingSpotNumber; // numero da vaga
 
-  @Column(nullable = false, unique = true, length = 7) // não pode ser nulo/não pode ter numero repitidos/tamanho de 10
+  @Column(nullable = false, unique = true, length = 7) // não pode ser nulo/não pode ter numero repetidos/tamanho de 10
   private String licensePlateCar; // placa do carro
 
   @Column(nullable = false, length = 70)
@@ -47,7 +47,7 @@ public class ParkingSpotModel implements Serializable {
   @Column(nullable = false, length = 30)
   private String block; // bloco
 
-  // OBS: para impletar depois fazer uma class para carro para fazee o
+  // OBS: para implementar depois, fazer uma class para carro para fazer o
   // relacionamento com o dono do carro
 
   // criando os getter e setter

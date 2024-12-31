@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.api.parking_control.dto.ParkingSpotDto;
 import com.api.parking_control.models.ParkingSpotModel;
@@ -26,19 +27,22 @@ import com.api.parking_control.services.ParkingSpotService;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*")
 @Controller
+@RestController
 public class ParkingSpotController {
 
-  @Autowired
+  final
   ParkingSpotRepository parkingSpotRepository;
 
   final ParkingSpotService parkingSpotService;
 
-  public ParkingSpotController(ParkingSpotService parkingSpotService) {
+  public ParkingSpotController(ParkingSpotService parkingSpotService, ParkingSpotRepository parkingSpotRepository) {
     this.parkingSpotService = parkingSpotService;
+    this.parkingSpotRepository = parkingSpotRepository;
   }
-  @PostMapping("/parking-spot")
+
+  @PostMapping("/add")
   public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid ParkingSpotDto parkingSpotDto) {
 
     if (parkingSpotService.existsByLicensePlateCar(parkingSpotDto.getLicensePlateCar())) {
